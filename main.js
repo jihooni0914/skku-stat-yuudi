@@ -24,6 +24,7 @@ switch (command) {
     case "avg":
     case "max":
         result = lib[command](numbers);
+        break;
     default:
         console.log("Wrong command!");
         process.exit(1);
