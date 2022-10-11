@@ -13,7 +13,7 @@ let numbers = process.argv
     .slice(3, process.argv.length)
     .map(n => parseFloat(n));
 
-if (numbers.some(n => isNaN(n))) {
+if (numbers.some(isNaN)) {
     console.log("Some arguments are not numbers!");
     process.exit(1);
 }
@@ -21,14 +21,9 @@ if (numbers.some(n => isNaN(n))) {
 let result;
 switch (command) {
     case "sum":
-        result = lib.sum(numbers);
-        break;
     case "avg":
-        result = lib.avg(numbers);
-        break;
     case "max":
-        result = lib.max(numbers);
-        break;
+        result = lib[command](numbers);
     default:
         console.log("Wrong command!");
         process.exit(1);
