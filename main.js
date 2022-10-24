@@ -23,11 +23,18 @@ switch (command) {
     case "sum":
     case "avg":
     case "max":
+    case "med":
+    case "outlier":
         result = lib[command](numbers);
         break;
+    case "iqr":
+        result = lib[command](numbers)[0];
+        break
     default:
         console.log("Wrong command!");
         process.exit(1);
 }
 
-console.log(result);
+if (typeof result !== "undefined") {
+    console.log(result);
+};

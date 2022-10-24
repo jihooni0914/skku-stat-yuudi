@@ -12,3 +12,19 @@ test("avg([-5, 5]) should be 0", () => {
 test("max([0, 3, 2]) should be 3", () => {
     expect(lib.max([0, 3, 2])).toBe(3);
 });
+
+test("med([5, 1, 2, 3, 3]) should be 3", () => {
+    expect(lib.med([5, 1, 2, 3, 3])).toBe(3);
+});
+
+test("iqr([48, 52, 57, 64, 72, 76, 77, 81, 85, 88]) should be 24", () => {
+    expect(lib.iqr([48, 52, 57, 64, 72, 76, 77, 81, 85, 88])[0]).toBe(24);
+});
+
+test("iqr([2, 4.5, 3]) should be 2.5", () => {
+    expect(lib.iqr([2, 4.5, 3])[0]).toBe(2.5);
+});
+
+// test("outlier([1, 2, 3, 4, 100]) should be nothing", () => {
+//     expect(lib.med([1, 2, 3, 4, 100])).toBe(3);
+// });
