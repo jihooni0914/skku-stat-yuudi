@@ -49,28 +49,6 @@ function iqr(numbers) {
     return [Math.abs(leftMedian - rightMedian), leftMedian, rightMedian];
 };
 
-function iqrAndQ1Q2Of(numbers) {
-    numbers.sort((a, b) => {
-        return a - b;
-    });
-
-
-    midPoint = Math.floor((numbers.length - 1) / 2);
-
-    if (numbers.length % 2 != 0) { // odd length
-        leftEnd = midPoint;
-        rightStart = midPoint + 1;
-    } else { // even length
-        leftEnd = midPoint + 1;
-        rightStart = midPoint + 1;
-    };
-
-    leftMedian = med(numbers.slice(0, leftEnd), true);
-    rightMedian = med(numbers.slice(rightStart, numbers.length), true);
-
-    return Math.abs(leftMedian - rightMedian);
-};
-
 function outlier(numbers) {
     // numbers.sort((a, b) => {
     //     return a - b;
